@@ -36,8 +36,9 @@ button:hover {
     background-color: rgba(46, 47, 66, 0.8);
 } 
 
-/* .sl-navigation .sl-prev {
-    color: aliceblue;
-} */
-
-
+.sl-prev, 
+.sl-next,
+.sl-counter,
+.sl-close {
+   color: aliceblue !important;
+}
