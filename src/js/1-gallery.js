@@ -84,22 +84,23 @@ function createMarkUp(arr) {
 			            class="gallery-image" 
 			            src="${preview}" 
 			            alt="${description}" 
+						title="${description}" 
 			            />
 	                </a>
                 </li>`)
         .join("")
 }
 
-import simpleLightbox from "simplelightbox";
-// Описаний в документації
+
 import SimpleLightbox from "simplelightbox";
-// Додатковий імпорт стилів
 import "simplelightbox/dist/simple-lightbox.min.css";
 
 
 const lightbox = new SimpleLightbox('.gallery a', { 
 	captionDelay: 250,
 	captionData: "alt",
+	className: "modal",
+	overlayOpacity: 1
 });
 
 
