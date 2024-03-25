@@ -1,4 +1,4 @@
-import"./assets/styles-8690beac.js";const l=document.querySelector("section"),c=`
+import"./assets/styles-da77b3e6.js";const l=document.querySelector("section"),c=`
 <form class="feedback-form" autocomplete="off">
     <label>
         Email
