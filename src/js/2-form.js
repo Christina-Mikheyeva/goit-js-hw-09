@@ -30,8 +30,8 @@ form.addEventListener("input", getText)
 form.addEventListener("submit", submitForm)
 
 function getText() {
-    const email = input.value;
-    const message = textarea.value;
+    const email = input.value.trim();
+    const message = textarea.value.trim();
     
     const data = {
         input: email,
@@ -47,20 +47,27 @@ function setText() {
     const retuneText = JSON.parse(savedText);
 
     if (retuneText) { 
-       input.value = retuneText.input
-       textarea.value = retuneText.textarea
+       input.value.trim() = retuneText.input
+       textarea.value.trim() = retuneText.textarea
     }
 }
 setText()
 
 function submitForm(e) {
+    e.preventDefault()
+    const data = {
+        Email: input.value.trim(),
+        Message: textarea.value.trim(),
+    };
+
     if (input.value === "" || textarea.value === "") {
         alert("Fill all fields")
     }
     else {
-        e.preventDefault()
         alert("Thanks, form send!")
+        console.log(data)
         e.currentTarget.reset()
         localStorage.removeItem(storageKey)
     }    
 }
+
