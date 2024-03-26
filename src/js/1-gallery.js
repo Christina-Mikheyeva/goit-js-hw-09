@@ -1,3 +1,7 @@
+// Import
+import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
+
 // Massive
 
 const images = [
@@ -91,12 +95,11 @@ function createMarkUp(arr) {
         .join("")
 }
 
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
-
 const lightbox = new SimpleLightbox('.gallery a', { 
 	captionDelay: 250,
 	captionData: "alt",
 	className: "modal",
 	overlayOpacity: 1
 });
+
+
