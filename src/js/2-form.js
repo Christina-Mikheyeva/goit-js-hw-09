@@ -1,25 +1,3 @@
-// MarkUp
-
-const section = document.querySelector("section");
-
-const markupForm =`
-<form class="feedback-form" autocomplete="off">
-    <label>
-        Email
-        <input type="email" name="email" autofocus />
-    </label>
-
-    <label>
-        Message
-        <textarea name="message" rows="8"></textarea>
-    </label>
-
-    <button type="submit">Submit</button>
-</form>`
-
-section.insertAdjacentHTML("beforeend", markupForm)
-
-// Settings
 
 const form = document.querySelector(".feedback-form");
 const input = document.querySelector("input");
@@ -30,12 +8,10 @@ form.addEventListener("input", getText)
 form.addEventListener("submit", submitForm)
 
 function getText() {
-    const email = input.value.trim();
-    const message = textarea.value.trim();
     
     const data = {
-        input: email,
-        textarea: message,
+        email: input.value.trim(),
+        message: textarea.value.trim(),
     };
 
     const jsonData = JSON.stringify(data);
@@ -47,8 +23,8 @@ function setText() {
     const retuneText = JSON.parse(savedText);
 
     if (retuneText) { 
-       input.value.trim() = retuneText.input
-       textarea.value.trim() = retuneText.textarea
+       input.value = retuneText.input.trim()
+       textarea.value = retuneText.textarea.trim()
     }
 }
 setText()

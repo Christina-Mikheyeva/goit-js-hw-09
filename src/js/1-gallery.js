@@ -72,11 +72,7 @@ const images = [
 
 // Gallery
 
-const section = document.querySelector("section");
-
-const gallery = document.createElement("ul");
-gallery.classList.add("gallery")
-section.append(gallery)
+const gallery = document.querySelector(".gallery");
 gallery.insertAdjacentHTML("beforeend", createMarkUp(images))
 
 function createMarkUp(arr) {
