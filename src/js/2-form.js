@@ -40,7 +40,6 @@ function submitForm(e) {
         alert("Fill all fields")
     }
     else {
-        // alert("Thanks, form send!")
         console.log(data)
         e.currentTarget.reset()
         localStorage.removeItem(storageKey)
