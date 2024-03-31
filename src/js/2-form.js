@@ -1,13 +1,13 @@
 
 const form = document.querySelector(".feedback-form");
-const input = document.querySelector(".feedback-form input[type='email']");
-const textarea = document.querySelector(".feedback-form textarea");
+const input = document.querySelector("form [name='email']");
+const textarea = document.querySelector("form [name='message']");
 const storageKey = "feedback-form-state";
 
-form.addEventListener("input", getText)
+form.addEventListener("input", handleInputUpdate)
 form.addEventListener("submit", submitForm)
 
-function getText() {
+function handleInputUpdate() {
     
     const data = {
         email: input.value.trim(),
@@ -36,7 +36,7 @@ function submitForm(e) {
         message: textarea.value.trim(),
     };
 
-    if (input.value === "" || textarea.value === "") {
+    if (input.value === " " || textarea.value === " ") {
         alert("Fill all fields")
     }
     else {
