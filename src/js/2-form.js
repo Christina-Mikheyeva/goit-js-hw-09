@@ -36,7 +36,7 @@ function submitForm(e) {
         message: textarea.value.trim(),
     };
 
-    if (input.value === " " || textarea.value === " ") {
+    if (input.value.trim() === "" || textarea.value.trim() === "") {
         alert("Fill all fields")
     }
     else {
